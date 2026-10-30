@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Hidroponik | SMEXA Smart</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js?v=3" defer></script>
+</head>
+<body>
+
+    <header class="dashboard-back-header">
+        <a class="btn-dashboard" href="../../dashboard/index.html">Kembali ke Dashboard</a>
+    </header>
+
+    <main>
+
+        <!-- Pemantauan sensor -->
+        <section id="monitoring">
+            <h2>Pemantauan Air</h2>
+
+            <div class="sensor-container">
+
+                <div class="sensor-card">
+                    <h3>Suhu Air</h3>
+                    <p id="suhu-air">--</p>
+                    <span>°C</span>
+                </div>
+
+                <div class="sensor-card">
+                    <h3>Kedalaman Air</h3>
+                    <p id="kedalaman-air">--</p>
+                    <span>cm</span>
+                </div>
+
+                <div class="sensor-card">
+                    <h3>pH Air</h3>
+                    <p id="ph-air">--</p>
+                    <span>Skala 0–14</span>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Kontrol pompa -->
+        <section id="kontrol-pompa">
+            <h2>Kontrol Pompa</h2>
+
+            <p>Status Pompa: <strong id="status-pompa">OFF</strong></p>
+
+            <button id="tombol-pompa" type="button">
+                NYALAKAN POMPA
+            </button>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SMEXA Smart</p>
+    </footer>
+
+</body>
+</html>

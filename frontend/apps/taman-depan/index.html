@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Taman Depan | SMEXA Smart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="dashboard-back-header">
+        <a class="btn-dashboard" href="../../dashboard/index.html">Kembali ke Dashboard</a>
+    </header>
+
+    <main>
+        <section id="monitoring">
+            <h2>Pemantauan Taman</h2>
+
+            <div class="sensor-container single-column">
+                <div class="sensor-card">
+                    <h3>Kelembapan Tanah</h3>
+                    <p id="kelembapan-tanah">--</p>
+                    <span>%</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontrol-pompa">
+            <h2>Kontrol Penyiraman</h2>
+            <p>Status Penyiraman: <strong id="status-pompa">OFF</strong></p>
+            <button id="tombol-pompa" type="button">NYALAKAN PENYIRAMAN</button>
+            <p>Kontrol saat ini masih berupa simulasi dan belum terhubung ke pompa fisik.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 SMEXA Smart</p>
+    </footer>
+
+</body>
+</html>

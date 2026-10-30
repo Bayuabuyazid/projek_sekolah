@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Dashboard | SMEXA Smart</title>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <a href="../landing/index.html" class="logo">
+            <span>SMEXA</span>
+            <span class="logo-smart">SMART</span>
+        </a>
+
+        <nav class="nav-menu" aria-label="Navigasi utama">
+            <a href="../landing/index.html">Beranda</a>
+            <a href="index.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- Header -->
+    <header>
+        <h1>SMEXA Smart</h1>
+        <p>Dashboard Monitoring Sistem IoT</p>
+    </header>
+
+    <!-- Konten utama -->
+    <main>
+
+        <!-- Informasi Hidroponik -->
+        <section>
+            <h2>🌱 Hidroponik</h2>
+            <p>Status koneksi alat: <span id="status-koneksi-hidroponik" class="connection-status is-checking" role="status" aria-live="polite">Memeriksa...</span></p>
+            <p>Status Pompa: <span id="status-hidroponik">Memuat...</span></p>
+            <p>Suhu Air: <span id="suhu-air">Memuat...</span></p>
+
+            <a href="../apps/Hidroponik/index.html">
+                Buka Aplikasi Hidroponik
+            </a>
+        </section>
+
+        <!-- Informasi Taman Depan -->
+        <section>
+            <h2>🌳 Taman Depan</h2>
+            <p>Status Pompa: <span id="status-taman">Memuat...</span></p>
+            <p>Kelembapan Tanah: <span id="kelembapan-tanah">Memuat...</span></p>
+
+            <a href="../apps/taman-depan/index.html">
+                Buka Aplikasi Taman Depan
+            </a>
+        </section>
+
+    </main>
+
+</body>
+</html>
+```

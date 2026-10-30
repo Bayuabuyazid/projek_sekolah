@@ -1,0 +1,264 @@
+/* =========================
+   1. RESET & DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f7fc;
+    color: #172b4d;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+body > header:not(.navbar) {
+    padding: 32px 8% 12px;
+}
+
+body > header:not(.navbar) h1 {
+    color: #172b4d;
+    font-size: clamp(26px, 4vw, 34px);
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+body > header:not(.navbar) p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+body > main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: 84%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 0 48px;
+}
+
+body > main > section {
+    padding: 24px;
+    background: #ffffff;
+    border: 1px solid #e5eaf3;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(23, 43, 77, 0.05);
+}
+
+body > main > section h2 {
+    margin-bottom: 16px;
+    color: #172b4d;
+    font-size: 20px;
+}
+
+body > main > section p {
+    margin-bottom: 10px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+body > main > section span {
+    color: #172b4d;
+    font-weight: 600;
+}
+
+.connection-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 700;
+}
+
+.connection-status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.connection-status.is-checking {
+    color: #64748b;
+}
+
+.connection-status.is-connected {
+    color: #15803d;
+}
+
+.connection-status.is-disconnected {
+    color: #dc2626;
+}
+
+.connection-status.is-error {
+    color: #b45309;
+}
+
+body > main > section a {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+body > main > section a:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+    body > header:not(.navbar) {
+        padding: 28px 6% 8px;
+    }
+
+    body > main {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 88%;
+        padding: 20px 0 36px;
+    }
+
+    body > main > section {
+        padding: 20px;
+    }
+}
+
+/* =========================
+   2. NAVBAR
+========================= */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #2563eb;
+}
+
+.logo-smart {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #2563eb;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: 14px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   3. KONTEN UTAMA
+========================= */
+
+.container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 0;
+}
+
+/* =========================
+   4. JUDUL DASHBOARD
+========================= */
+
+.welcome {
+    margin-bottom: 32px;
+}
+
+.label {
+    color: #2563eb;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.welcome h1 {
+    color: #172b4d;
+    font-size: clamp(28px, 4vw, 38px);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.welcome > p:last-child {
+    color: #64748b;
+    font-size: 15px;
+}
+
+/* =========================
+   5. KARTU SISTEM
+========================= */
+
+.system-card {
+    background: #ffffff;
+    border: 1px solid #e5eaf3;
+    border-radius: 12px;
+    padding: 24px;
+}

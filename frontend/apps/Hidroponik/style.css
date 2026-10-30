@@ -1,0 +1,356 @@
+
+/* =========================
+   1. PENGATURAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fb;
+    color: #1e293b;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   2. HEADER
+========================= */
+
+header {
+    background-color: #ffffff;
+    padding: 28px 6%;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+header h1 {
+    color: #1769d2;
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.dashboard-back-header {
+    padding: 10px 6%;
+}
+
+.btn-dashboard {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-dashboard:hover {
+    background-color: #1d4ed8;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+    line-height: normal;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.logo-smart {
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #64748b;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #475569;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #2563eb;
+}
+
+.btn-login {
+    text-decoration: none;
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 11px 22px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #1d4ed8;
+}
+
+
+/* =========================
+   3. AREA UTAMA
+========================= */
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+section {
+    margin-bottom: 32px;
+}
+
+section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1e293b;
+}
+
+
+/* =========================
+   4. KARTU SENSOR
+========================= */
+
+.sensor-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.sensor-container.single-column {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 380px;
+}
+
+.sensor-card {
+    background-color: #ffffff;
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sensor-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.sensor-card h3 {
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.sensor-card p {
+    display: inline-block;
+    color: #1769d2;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.sensor-card span {
+    color: #64748b;
+    font-size: 14px;
+    margin-left: 4px;
+}
+
+
+/* =========================
+   5. PANEL KONTROL POMPA
+========================= */
+
+#kontrol-pompa {
+    background-color: #ffffff;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+#kontrol-pompa h2 {
+    margin-bottom: 16px;
+}
+
+#kontrol-pompa p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+#status-pompa {
+    display: inline-block;
+    color: #dc2626;
+    background-color: #fef2f2;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-left: 6px;
+}
+
+
+/* =========================
+   6. TOMBOL POMPA
+========================= */
+
+#tombol-pompa {
+    width: 100%;
+    max-width: 320px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #1769d2;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+#tombol-pompa:hover {
+    background-color: #1255ad;
+}
+
+#tombol-pompa:active {
+    transform: scale(0.98);
+}
+
+#tombol-pompa:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+
+/* =========================
+   7. FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 24px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* =========================
+   8. RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 768px) {
+    header {
+        padding: 24px;
+    }
+
+    .navbar {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .btn-login {
+        margin-left: auto;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    .sensor-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .sensor-card {
+        padding: 20px;
+    }
+
+    .sensor-card p {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================
+   9. RESPONSIVE HP
+========================= */
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: 14px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    .sensor-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sensor-card {
+        padding: 20px;
+    }
+
+    #kontrol-pompa {
+        padding: 22px;
+    }
+
+    #tombol-pompa {
+        max-width: none;
+    }
+}
