@@ -14,7 +14,7 @@ const API_POMPA =
 const API_SENSOR =
     `${basePath}/backend/API/Sensor/hidroponik/index.php`;
 
-const INTERVAL_UPDATE = 15000;
+const INTERVAL_UPDATE = 2000;
 const BATAS_DATA_SENSOR = 2 * 60 * 1000;
 
 let sedangMemuat = false;
