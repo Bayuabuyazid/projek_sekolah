@@ -274,7 +274,7 @@ function tampilkanSensor(result) {
 
     if (!data) {
 
-        tampilkan("suhu-air", "Data tidak tersedia");
+        tampilkan("tds-air", "Data tidak tersedia");
         tampilkan("kedalaman-air", "Data tidak tersedia");
         tampilkan("ph-air", "Data tidak tersedia");
 
@@ -283,17 +283,15 @@ function tampilkanSensor(result) {
         return;
     }
 
-    // SUHU AIR
-    const suhu = ambilNilai(data, [
-        "suhu_air",
-        "suhu",
-        "temperature",
-        "temp_air"
+    // TDS AIR
+    const tds = ambilNilai(data, [
+        "tds_ppm",
+        "tds"
     ]);
 
     tampilkan(
-        "suhu-air",
-        suhu !== null ? `${suhu} °C` : "Data tidak tersedia"
+        "tds-air",
+        tds !== null ? `${tds} PPM` : "Data tidak tersedia"
     );
 
 
@@ -403,7 +401,7 @@ async function perbaruiDashboard() {
 
         } else {
 
-            tampilkan("suhu-air", "Gagal memuat");
+            tampilkan("tds-air", "Gagal memuat");
             tampilkan("kedalaman-air", "Gagal memuat");
             tampilkan("ph-air", "Gagal memuat");
 

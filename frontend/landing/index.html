@@ -7,7 +7,7 @@
 
     <title>SMEXA Smart | Platform IoT</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -17,15 +17,22 @@
         <a href="index.html" class="logo">
             <span>SMEXA</span>
             <span class="logo-smart">SMART</span>
+        </a>
 
-        <nav class="nav-menu">
+        <nav class="nav-menu" aria-label="Navigasi utama">
             <a href="#home">Beranda</a>
-            <a href="../dashboard/index.html">Dashboard</a>
+            <details class="nav-apps">
+                <summary>Pilih Aplikasi</summary>
+                <div class="nav-app-options">
+                    <a href="../apps/Hidroponik/index.html">Hidroponik</a>
+                    <a href="../apps/taman-depan/index.html">Taman Depan</a>
+                </div>
+            </details>
         </nav>
 
-            <a href="../login/" class="btn-login">Login</a>
-
     </header>
+
+    <img class="banner-about" src="" alt="Gambar tentang SMEXA Smart">
 
 
     <!-- Beranda -->
@@ -65,7 +72,89 @@
 
         </section>
 
+        <section class="overview" aria-label="Fitur dan aplikasi SMEXA Smart">
+            <div class="feature-list">
+                <article class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">▣</span>
+                    <div>
+                        <h2>Monitoring IoT</h2>
+                        <p>Pantau kondisi perangkat melalui dashboard.</p>
+                    </div>
+                    <span class="feature-arrow" aria-hidden="true">›</span>
+                </article>
+
+                <article class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">⚡</span>
+                    <div>
+                        <h2>Kontrol Perangkat</h2>
+                        <p>Kendalikan pompa melalui aplikasi.</p>
+                    </div>
+                    <span class="feature-arrow" aria-hidden="true">›</span>
+                </article>
+
+                <article class="feature-item">
+                    <span class="feature-icon" aria-hidden="true">◉</span>
+                    <div>
+                        <h2>Monitoring Hidroponik</h2>
+                        <p>Pantau suhu, kedalaman, dan pH air.</p>
+                    </div>
+                    <span class="feature-arrow" aria-hidden="true">›</span>
+                </article>
+            </div>
+
+            <div class="applications" id="aplikasi">
+                <div class="applications-heading">
+                    <span class="section-accent" aria-hidden="true"></span>
+                    <h2>Aplikasi Kami</h2>
+                    <p>Kelola berbagai perangkat IoT dalam satu platform yang terintegrasi.</p>
+                </div>
+
+                <div class="application-list">
+                    <article class="application-card hydroponic-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                            alt="Tanaman hijau yang tumbuh subur"
+                            loading="lazy"
+                        >
+                        <div class="application-info">
+                            <span class="application-emoji" aria-hidden="true">🌱</span>
+                            <div>
+                                <h3>Hidroponik</h3>
+                                <p>Pantau dan kontrol sistem hidroponik secara real-time.</p>
+                                <a href="../apps/Hidroponik/index.html">
+                                    Buka Dashboard <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="application-card garden-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+                            alt="Taman hijau di area luar ruangan"
+                            loading="lazy"
+                        >
+                        <div class="application-info">
+                            <span class="application-emoji" aria-hidden="true">🌳</span>
+                            <div>
+                                <h3>Taman Depan</h3>
+                                <p>Kelola taman depan dengan teknologi IoT.</p>
+                                <a href="../apps/taman-depan/index.html">
+                                    Buka Dashboard <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="landing-footer">
+        <span>SMEXA Smart</span>
+        <span>IoT for a Smarter Future</span>
+    </footer>
 
 </body>
 

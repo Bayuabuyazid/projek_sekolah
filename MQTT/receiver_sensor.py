@@ -1,17 +1,19 @@
 import json
+import math
 import paho.mqtt.client as mqtt
 import mysql.connector
 
-# Konfigurasi MQTT
+# ================= KONFIGURASI MQTT =================
 
 MQTT_BROKER = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_USERNAME = "smexa"
 MQTT_PASSWORD = "12345678"
+
 TOPIK_SENSOR = "lab/sensor"
 
-# Konfigurasi MySQL Laragon
 
+# ================= KONFIGURASI DATABASE =================
 
 def koneksi_database():
     return mysql.connector.connect(
@@ -23,7 +25,7 @@ def koneksi_database():
     )
 
 
-# Dipanggil ketika terhubung ke MQTT
+# ================= KONEKSI MQTT =================
 
 def saat_terhubung(client, userdata, flags, reason_code, properties):
     if reason_code == 0:
@@ -34,74 +36,88 @@ def saat_terhubung(client, userdata, flags, reason_code, properties):
         print(f"Koneksi MQTT gagal: {reason_code}")
 
 
-# Dipanggil ketika pesan sensor diterima
+# ================= MENERIMA DATA TDS =================
 
 def saat_pesan(client, userdata, pesan):
+
+    db = None
+    cursor = None
+
     try:
+        # Membaca JSON dari ESP32
         data = json.loads(pesan.payload.decode("utf-8"))
 
-        # Validasi data wajib
-        suhu_air = float(data["suhu_air"])
-        ph_air = float(data["ph_air"])
-        kedalaman_air = float(data["kedalaman_air"])
+        # Mengambil nilai TDS
+        tds_ppm = float(data["tds_ppm"])
 
-        if not all(map(lambda nilai: nilai == nilai and abs(nilai) != float("inf"),
-                       [suhu_air, ph_air, kedalaman_air])):
-            raise ValueError("Nilai sensor tidak valid.")
+        # Validasi nilai
+        if not math.isfinite(tds_ppm) or tds_ppm < 0:
+            raise ValueError("Nilai TDS tidak valid.")
 
-        # Simpan ke MySQL
+        # Membuka koneksi database
         db = koneksi_database()
-        cursor = None
+        cursor = db.cursor()
 
-        try:
-            cursor = db.cursor()
+        # Menyimpan TDS ke MySQL
+        sql = """
+            INSERT INTO data_sensor
+            (perangkat_id, tds_ppm)
+            VALUES (%s, %s)
+        """
 
-            sql = """
-                INSERT INTO data_sensor
-                (perangkat_id, suhu_air, kedalaman_air, ph_air)
-                VALUES (%s, %s, %s, %s)
-            """
+        cursor.execute(
+            sql,
+            (1, round(tds_ppm, 2))
+        )
 
-            cursor.execute(
-                sql,
-                (1, suhu_air, kedalaman_air, ph_air)
-            )
+        db.commit()
 
-            db.commit()
-
-            print(
-                f"Data tersimpan | "
-                f"Suhu: {suhu_air} | "
-                f"pH: {ph_air} | "
-                f"Kedalaman: {kedalaman_air}"
-            )
-
-        finally:
-            if cursor is not None:
-                cursor.close()
-            db.close()
+        print(
+            f"TDS BERHASIL DISIMPAN | "
+            f"Nilai: {tds_ppm:.2f} PPM"
+        )
 
     except (ValueError, KeyError, json.JSONDecodeError) as error:
-        print(f"Data sensor tidak valid: {error}")
+        print(f"Data TDS tidak valid: {error}")
 
     except mysql.connector.Error as error:
         print(f"Kesalahan database: {error}")
 
+        if db is not None:
+            db.rollback()
 
-# Jalankan receiver
+    finally:
+        if cursor is not None:
+            cursor.close()
+
+        if db is not None and db.is_connected():
+            db.close()
+
+
+# ================= MENJALANKAN RECEIVER =================
 
 client = mqtt.Client(
     callback_api_version=mqtt.CallbackAPIVersion.VERSION2,
     client_id="smexa-windows-receiver"
 )
 
-client.username_pw_set(MQTT_USERNAME, MQTT_PASSWORD)
+client.username_pw_set(
+    MQTT_USERNAME,
+    MQTT_PASSWORD
+)
+
 client.on_connect = saat_terhubung
 client.on_message = saat_pesan
 
 try:
     print("Menghubungkan receiver ke MQTT...")
-    client.connect(MQTT_BROKER, MQTT_PORT, 60)
+
+    client.connect(
+        MQTT_BROKER,
+        MQTT_PORT,
+        60
+    )
+
     client.loop_forever()
 
 except KeyboardInterrupt:

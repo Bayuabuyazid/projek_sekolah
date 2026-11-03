@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js?v=2" defer></script>
     <title>Dashboard | SMEXA Smart</title>
 </head>
 <body>
@@ -19,7 +19,13 @@
 
         <nav class="nav-menu" aria-label="Navigasi utama">
             <a href="../landing/index.html">Beranda</a>
-            <a href="index.html">Dashboard</a>
+            <details class="nav-apps">
+                <summary>Pilih Aplikasi</summary>
+                <div class="nav-app-options">
+                    <a href="../apps/Hidroponik/index.html">Hidroponik</a>
+                    <a href="../apps/taman-depan/index.html">Taman Depan</a>
+                </div>
+            </details>
         </nav>
     </header>
 
@@ -37,7 +43,7 @@
             <h2>🌱 Hidroponik</h2>
             <p>Status koneksi alat: <span id="status-koneksi-hidroponik" class="connection-status is-checking" role="status" aria-live="polite">Memeriksa...</span></p>
             <p>Status Pompa: <span id="status-hidroponik">Memuat...</span></p>
-            <p>Suhu Air: <span id="suhu-air">Memuat...</span></p>
+           <p>TDS Air: <span id="tds-air">Memuat...</span></p>
             <p>Kedalaman Air: <span id="kedalaman-air">Memuat...</span></p>
             <p>pH Air: <span id="ph-air">Memuat...</span></p>
 

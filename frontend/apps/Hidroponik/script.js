@@ -148,12 +148,12 @@ async function ambilDataSensor() {
             throw new Error("Data sensor tidak tersedia.");
         }
 
-        const suhuAir = document.getElementById("suhu-air");
+        const tdsAir = document.getElementById("tds-air");
         const kedalamanAir = document.getElementById("kedalaman-air");
         const phAir = document.getElementById("ph-air");
 
-        if (suhuAir) {
-            suhuAir.textContent = data.suhu_air ?? "—";
+        if (tdsAir) {
+            tdsAir.textContent = data.tds_ppm ?? "—";
         }
 
         if (kedalamanAir) {

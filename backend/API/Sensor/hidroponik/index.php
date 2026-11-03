@@ -8,7 +8,7 @@ try {
         SELECT
             id,
             perangkat_id,
-            suhu_air,
+            tds_ppm,
             kedalaman_air,
             ph_air,
             kelembapan_tanah,

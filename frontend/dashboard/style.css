@@ -183,6 +183,55 @@ body > main > section a:hover {
     color: #2563eb;
 }
 
+.nav-apps {
+    position: relative;
+}
+
+.nav-apps summary {
+    color: #475569;
+    cursor: pointer;
+    font-size: 15px;
+    list-style: none;
+}
+
+.nav-apps summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-apps summary::after {
+    content: "▾";
+    margin-left: 6px;
+    font-size: 12px;
+}
+
+.nav-apps summary:hover {
+    color: #2563eb;
+}
+
+.nav-app-options {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    z-index: 10;
+    min-width: 180px;
+    padding: 6px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.nav-app-options a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.nav-app-options a:hover {
+    background: #eff6ff;
+}
+
 @media (max-width: 768px) {
     .navbar {
         padding: 18px 5%;
