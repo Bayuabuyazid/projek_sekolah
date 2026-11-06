@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lihat pilihan sayuran segar dan ikan dari SMEXA Smart Store.">
+    <title>Store | SMEXA Smart</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="../frontend/landing/index.html" class="logo" aria-label="SMEXA Smart, kembali ke Beranda">
+            <img
+                src="../IMG/WhatsApp%20Image%202026-11-03%20at%2007.19.56.jpeg"
+                alt="Logo SMKN 1 Probolinggo"
+                class="logo-image"
+                width="42"
+                height="42"
+            >
+            <span>SMEXA</span>
+            <span class="logo-smart">SMART</span>
+        </a>
+
+        <nav class="nav-menu" aria-label="Navigasi utama">
+            <a href="../frontend/landing/index.html">Beranda</a>
+            <details class="nav-apps">
+                <summary>Sistem</summary>
+                <div class="nav-app-options">
+                    <a href="../frontend/dashboard/index.html">Dashboard</a>
+                    <a href="../frontend/apps/Hidroponik/index.html">Hidroponik</a>
+                    <a href="../frontend/apps/taman-depan/index.html">Taman Depan</a>
+                </div>
+            </details>
+            <a href="index.html" aria-current="page">Store</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="store-hero">
+            <div class="hero-copy">
+                <span class="eyebrow">SMEXA SMART STORE</span>
+                <h1>Segar dari kebun,<br><span>siap untuk meja makan.</span></h1>
+                <p>Pilihan sayuran segar dan ikan berkualitas untuk kebutuhan harian keluarga.</p>
+                <a class="hero-link" href="#produk">Lihat produk <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <span class="hero-leaf leaf-one">🥬</span>
+                <span class="hero-leaf leaf-two">🍅</span>
+                <span class="hero-leaf leaf-three">🐟</span>
+                <span class="hero-stamp">SEGAR<br>SETIAP HARI</span>
+            </div>
+        </section>
+
+        <section class="catalog" id="produk" aria-labelledby="catalog-title">
+            <div class="catalog-heading">
+                <div>
+                    <span class="section-kicker">PILIHAN HARI INI</span>
+                    <h2 id="catalog-title">Produk segar kami</h2>
+                    <p>Temukan sayuran dan ikan favoritmu.</p>
+                </div>
+                <label class="search-box">
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+                    <span class="visually-hidden">Cari produk</span>
+                    <input id="product-search" type="search" placeholder="Cari produk..." autocomplete="off">
+                </label>
+            </div>
+
+            <div class="catalog-tools">
+                <div class="filters" role="group" aria-label="Filter kategori produk">
+                    <button class="filter-button is-active" type="button" data-category="semua" aria-pressed="true">Semua</button>
+                    <button class="filter-button" type="button" data-category="sayuran" aria-pressed="false">Sayuran</button>
+                    <button class="filter-button" type="button" data-category="ikan" aria-pressed="false">Ikan</button>
+                </div>
+                <p class="product-count" id="product-count" aria-live="polite">12 produk</p>
+            </div>
+
+            <div class="product-grid" id="product-grid">
+                <article class="product-card" data-category="sayuran" data-name="kangkung">
+                    <div class="product-visual visual-green">
+                        <img class="product-photo" src="../IMG/images.jpg" alt="Kangkung segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Kangkung</h3><p class="product-unit">1 ikat</p><p class="product-price">Rp2.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="sawi">
+                    <div class="product-visual visual-lime">
+                        <img class="product-photo" src="../IMG/5286-800x800.jpg" alt="Sawi segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Sawi</h3><p class="product-unit">1 ikat</p><p class="product-price">Rp2.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="terong">
+                    <div class="product-visual visual-purple">
+                        <img class="product-photo" src="../IMG/images%20(1).jpg" alt="Terong segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Terong</h3><p class="product-unit">1 pack · isi 3</p><p class="product-price">Rp3.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="bayam brazil">
+                    <div class="product-visual visual-mint">
+                        <img class="product-photo" src="../IMG/Bayam-Brazil-600x600.webp" alt="Bayam Brazil segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Bayam Brazil</h3><p class="product-unit">1 pack</p><p class="product-price">Rp2.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="sereh serai">
+                    <div class="product-visual visual-green">
+                        <img class="product-photo" src="../IMG/1791944148674013_38860a02ec_berita_mataram.webp" alt="Sereh segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Sereh</h3><p class="product-unit">1 ikat</p><p class="product-price">Rp3.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="tomat">
+                    <div class="product-visual visual-peach">
+                        <img class="product-photo" src="../IMG/8o0e13w0blkl0kj.avif" alt="Tomat segar">
+                        <span class="product-tag">Sayuran</span>
+                    </div>
+                    <div class="product-info"><h3>Tomat</h3><p class="product-unit">1 pack</p><p class="product-price">Rp3.000</p></div>
+                </article>
+                <article class="product-card" data-category="sayuran" data-name="kemangi">
+                    <div class="product-visual visual-mint"><span aria-hidden="true">🌱</span><span class="product-tag">Sayuran</span></div>
+                    <div class="product-info"><h3>Kemangi</h3><p class="product-unit">1 pack</p><p class="product-price">Rp2.000</p></div>
+                </article>
+                <article class="product-card" data-category="ikan" data-name="ikan nila bumbu marinasi">
+                    <div class="product-visual visual-blue"><span aria-hidden="true">🐟</span><span class="product-tag">Ikan</span></div>
+                    <div class="product-info"><h3>Ikan Nila Bumbu Marinasi</h3><p class="product-unit">500 gr</p><p class="product-price">Rp20.000</p></div>
+                </article>
+                <article class="product-card" data-category="ikan" data-name="ikan nila tanpa bumbu">
+                    <div class="product-visual visual-blue"><span aria-hidden="true">🐟</span><span class="product-tag">Ikan</span></div>
+                    <div class="product-info"><h3>Ikan Nila Tanpa Bumbu</h3><p class="product-unit">500 gr</p><p class="product-price">Rp17.000</p></div>
+                </article>
+                <article class="product-card" data-category="ikan" data-name="ikan gurami gurame">
+                    <div class="product-visual visual-blue"><span aria-hidden="true">🐟</span><span class="product-tag">Ikan</span></div>
+                    <div class="product-info"><h3>Ikan Gurami</h3><p class="product-unit">650 gr</p><p class="product-price">Rp35.000</p></div>
+                </article>
+                <article class="product-card" data-category="ikan" data-name="ikan lele bumbu marinasi">
+                    <div class="product-visual visual-blue"><span aria-hidden="true">🐟</span><span class="product-tag">Ikan</span></div>
+                    <div class="product-info"><h3>Ikan Lele Bumbu Marinasi</h3><p class="product-unit">500 gr</p><p class="product-price">Rp20.000</p></div>
+                </article>
+                <article class="product-card" data-category="ikan" data-name="ikan lele tanpa bumbu">
+                    <div class="product-visual visual-blue"><span aria-hidden="true">🐟</span><span class="product-tag">Ikan</span></div>
+                    <div class="product-info"><h3>Ikan Lele Tanpa Bumbu</h3><p class="product-unit">500 gr</p><p class="product-price">Rp17.000</p></div>
+                </article>
+            </div>
+            <p class="empty-state" id="empty-state" hidden>Produk tidak ditemukan. Coba kata kunci atau kategori lain.</p>
+
+            <section class="order-summary" aria-labelledby="order-title">
+                <div class="order-heading">
+                    <div>
+                        <span class="section-kicker">KERANJANG</span>
+                        <h2 id="order-title">Ringkasan pesanan</h2>
+                    </div>
+                    <span class="order-item-count" id="order-item-count" aria-live="polite">0 barang</span>
+                </div>
+                <p class="order-empty" id="order-empty">Belum ada produk. Tekan tombol + pada produk untuk mulai memesan.</p>
+                <ul class="order-list" id="order-list" aria-live="polite"></ul>
+                <div class="order-total">
+                    <span>Total pesanan</span>
+                    <strong id="order-total">Rp0</strong>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="store-footer">
+        <a href="../frontend/landing/index.html" class="logo">
+            <span>SMEXA</span><span class="logo-smart">SMART</span>
+        </a>
+        <p>SMEXA Smart Store · Pilihan segar untuk keluarga.</p>
+    </footer>
+</body>
+</html>

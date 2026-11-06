@@ -141,22 +141,37 @@ body > main > section a:hover {
 ========================= */
 
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 8%;
-    background-color: #ffffff;
+    justify-content: space-between;
+    padding: 16px max(5%, calc((100% - 1200px) / 2));
     border-bottom: 1px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
 }
 
 .logo {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 24px;
-    font-weight: bold;
     text-decoration: none;
     color: #2563eb;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.logo-image {
+    display: block;
+    width: 42px;
+    height: 42px;
+    max-width: 42px;
+    flex: 0 0 42px;
+    object-fit: contain;
 }
 
 .logo-smart {
@@ -168,18 +183,21 @@ body > main > section a:hover {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 28px;
 }
 
-.nav-menu a {
+.nav-menu a,
+.nav-apps summary {
     text-decoration: none;
     color: #475569;
     font-size: 15px;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-.nav-menu a:hover,
-.nav-menu a.active {
+.nav-menu > a:hover,
+.nav-menu > a[aria-current="page"],
+.nav-apps summary:hover {
     color: #2563eb;
 }
 
@@ -191,6 +209,7 @@ body > main > section a:hover {
     color: #475569;
     cursor: pointer;
     font-size: 15px;
+    font-weight: 600;
     list-style: none;
 }
 
@@ -213,52 +232,72 @@ body > main > section a:hover {
     top: calc(100% + 10px);
     right: 0;
     z-index: 10;
-    min-width: 180px;
+    min-width: 190px;
     padding: 6px;
     border: 1px solid #e2e8f0;
-    border-radius: 6px;
+    border-radius: 12px;
     background: #fff;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.14);
 }
 
 .nav-app-options a {
     display: block;
-    padding: 9px 12px;
-    border-radius: 4px;
+    padding: 10px 12px;
+    border-radius: 8px;
     white-space: nowrap;
+    color: #475569;
+    font-size: 14px;
+    text-decoration: none;
 }
 
-.nav-app-options a:hover {
+.nav-app-options a:hover,
+.nav-app-options a[aria-current="page"] {
     background: #eff6ff;
+    color: #2563eb;
+}
+
+.nav-menu a:focus-visible,
+.nav-apps summary:focus-visible,
+.nav-app-options a:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.45);
+    outline-offset: 3px;
 }
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 18px 5%;
         flex-wrap: wrap;
-        gap: 18px;
-    }
-
-    .logo {
-        font-size: 21px;
+        gap: 12px 24px;
+        padding: 14px 5%;
     }
 
     .nav-menu {
-        order: 3;
         width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
+        justify-content: flex-end;
+        gap: clamp(16px, 4vw, 28px);
     }
 }
 
 @media (max-width: 480px) {
-    .nav-menu {
-        gap: 14px;
+    .logo {
+        font-size: 20px;
     }
 
-    .nav-menu a {
-        font-size: 13px;
+    .logo-image {
+        width: 36px;
+        height: 36px;
+        max-width: 36px;
+        flex-basis: 36px;
+    }
+
+    .nav-menu {
+        justify-content: flex-start;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu > a,
+    .nav-apps summary {
+        font-size: 14px;
     }
 }
 
